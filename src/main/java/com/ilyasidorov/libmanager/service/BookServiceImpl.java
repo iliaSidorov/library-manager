@@ -11,7 +11,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
 
 
-    public BookDao bookDao;
+    private BookDao bookDao;
 
     @Autowired
     public BookServiceImpl(BookDao bookDao) {

@@ -11,7 +11,7 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
 
-    public StudentDao studentDao;
+    private StudentDao studentDao;
 
     @Autowired
     public StudentServiceImpl(StudentDao studentDao) {
