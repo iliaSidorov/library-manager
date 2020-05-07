@@ -15,17 +15,19 @@ import java.util.stream.Collectors;
 @RequestMapping("/")
 public class BookController {
 
-//    @Autowired
-//    private Logger logger;
-
     @Autowired
     public BookService bookService;
-
 
     //show starting page
     @GetMapping("/")
     public String index() {
         return "index";
+    }
+
+    //error handler
+    @GetMapping("/error")
+    public String getError() {
+        return "error";
     }
 
     //show all books in the library storage
