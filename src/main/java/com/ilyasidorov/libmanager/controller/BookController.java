@@ -15,7 +15,8 @@ import java.util.stream.Collectors;
 @RequestMapping("/")
 public class BookController {
 
-    private Logger logger = Logger.getLogger(BookController.class);
+//    @Autowired
+//    private Logger logger;
 
     @Autowired
     public BookService bookService;
@@ -24,8 +25,6 @@ public class BookController {
     //show starting page
     @GetMapping("/")
     public String index() {
-
-        logger.info("inside index controller");
         return "index";
     }
 

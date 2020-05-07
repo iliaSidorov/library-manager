@@ -1,8 +1,11 @@
 package com.ilyasidorov.libmanager.config;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.ViewResolver;
@@ -15,8 +18,9 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.ilyasidorov.libmanager.controller",
-        "com.ilyasidorov.libmanager.service", "com.ilyasidorov.libmanager.dao"})
+@ComponentScan(basePackages = { "com.ilyasidorov.libmanager.controller",
+                                "com.ilyasidorov.libmanager.service",
+                                "com.ilyasidorov.libmanager.dao" })
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean
@@ -54,5 +58,11 @@ public class WebConfig implements WebMvcConfigurer {
         return freeMarkerConfigurer;
     }
 
+    //Logging config
+    @Bean
+    @Scope("prototype")
+    public Logger logger(InjectionPoint injectionPoint) {
+        return Logger.getLogger(injectionPoint.getMember().getDeclaringClass());
+    }
 
 }

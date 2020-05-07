@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public class BookDaoImpl implements BookDao{
-    
+
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
