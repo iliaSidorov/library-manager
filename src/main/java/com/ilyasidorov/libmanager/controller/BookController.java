@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/")
 public class BookController {
 
+    private Logger logger = Logger.getLogger(BookController.class);
 
     @Autowired
     public BookService bookService;
@@ -22,6 +24,8 @@ public class BookController {
     //show starting page
     @GetMapping("/")
     public String index() {
+
+        logger.info("inside index controller");
         return "index";
     }
 

@@ -10,9 +10,8 @@ import java.util.List;
 
 @Repository
 public class BookDaoImpl implements BookDao{
-
-
-    public JdbcTemplate jdbcTemplate;
+    
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     public BookDaoImpl(JdbcTemplate jdbcTemplate) {
@@ -21,8 +20,10 @@ public class BookDaoImpl implements BookDao{
 
     @Override
     public List<Book> findAllBooks() {
+
         String sql = "SELECT * FROM book";
         List<Book> bookList = jdbcTemplate.query(sql, new BookMapper());
+
         return bookList;
     }
 

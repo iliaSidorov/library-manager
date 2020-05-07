@@ -11,9 +11,10 @@ import java.util.List;
 @Repository
 public class StudentDaoImpl implements StudentDao {
 
-    @Autowired
-    public JdbcTemplate jdbcTemplate;
 
+    private JdbcTemplate jdbcTemplate;
+
+    @Autowired
     public StudentDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
