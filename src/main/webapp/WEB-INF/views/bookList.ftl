@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Books</title>
-    <style>
-        caption {
-            padding-bottom: 20px;
-            text-align: left;
-            font-style: italic;
-            font-size: 18px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-    </style>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
-    <h2>BOOK STORAGE</h2>
+    <h3>Book Storage</h3>
     <br/>
     <a href="/">Home</a>
     <br/><br/>
@@ -27,10 +9,9 @@
         <input type="submit" value="Add New Book">
     </form>
     <br>
+    Total number of books in the library: ${books?size}
+    <br/><br/>
     <table border="1" cellpadding="8">
-        <br/>
-        <caption>Total number of books in the library: ${books?size}</caption>
-        <br/>
         <thead>
         <tr>
             <th>ID</th>
@@ -57,5 +38,4 @@
         </tbody>
     </table>
 </div>
-</body>
-</html>
+</@c.page>

@@ -2,6 +2,7 @@ package com.ilyasidorov.libmanager.controller;
 
 import com.ilyasidorov.libmanager.model.Book;
 import com.ilyasidorov.libmanager.service.BookService;
+import com.ilyasidorov.libmanager.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 public class BookController {
 
     @Autowired
-    public BookService bookService;
+    private BookService bookService;
 
     //show starting page
     @GetMapping("/")
@@ -120,7 +121,6 @@ public class BookController {
                 .filter(b -> b.getStudent_id() == id)
                 .collect(Collectors.toList());
         model.addAttribute("books", booksByStudentId);
-
         return "studentDebts";
     }
 }

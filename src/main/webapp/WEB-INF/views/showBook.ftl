@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
-<h3>BOOK INFO</h3>
+<h3>Book Info</h3>
 <br/>
     <table border="1" cellpadding="8">
         <tr>
@@ -29,5 +24,4 @@
     <br/>
     <button><a style="text-decoration: none" href="/books">Back</a></button>
     </div>
-</body>
-</html>
+</@c.page>

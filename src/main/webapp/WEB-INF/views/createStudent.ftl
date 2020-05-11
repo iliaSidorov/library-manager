@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add New Book</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
     <h3>ADD NEW STUDENT</h3>
     <form name="book" action="/students/addStudent" method="post">
@@ -26,5 +21,4 @@
         <input type="submit" value="Add">
     </form>
 </div>
-</body>
-</html>
+</@c.page>

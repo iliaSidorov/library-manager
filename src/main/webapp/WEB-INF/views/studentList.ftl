@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Students</title>
-    <style>
-        caption {
-            padding-bottom: 20px;
-            text-align: left;
-            font-style: italic;
-            font-size: 18px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-    </style>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
-    <h2>REGISTRED STUDENTS</h2>
+    <h3>Registred Students</h3>
     <br/>
     <a href="/">Home</a>
     <br/><br/>
     <form name="new" action="/students/addStudent" method="get">
         <input type="submit" value="Add New Student">
     </form>
-
-    <br>
+    <br/>
+    Total number of the registred students: ${students?size}
+    <br/><br/>
     <table border="1" cellpadding="8">
-        <br/>
-        <caption>Total number of registred students: ${students?size}</caption>
-        <br/>
         <thead>
         <tr>
             <th>ID</th>
@@ -58,5 +38,4 @@
         </tbody>
     </table>
 </div>
-</body>
-</html>
+</@c.page>

@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
     <h3>EDIT STUDENT</h3>
     <br/>
@@ -32,6 +27,4 @@
     </form>
 
 </div>
-
-</body>
-</html>
+</@c.page>

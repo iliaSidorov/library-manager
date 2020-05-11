@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<@c.page>
 <div align="center">
     <br/>
     <a href="/">Home</a>
@@ -36,9 +31,7 @@
         </tbody>
     </table>
 </div>
-
-</body>
-</html>
+</@c.page>
 
 
 
